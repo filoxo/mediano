@@ -1,0 +1,68 @@
+$header-meta-height: 115px;
+
+.main-header{
+  height: $header-meta-height * 3;
+  position: relative;
+  &.no-cover {
+    background: $color-main; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, darken($color-main, 15) 0%, $color-main 50%, lighten($color-main, 15) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, darken($color-main, 15) 0%,$color-main 50%, lighten($color-main, 15) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, darken($color-main, 15) 0%,$color-main 50%, lighten($color-main, 15) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  }
+}
+
+.metabar {
+  background: $color-base;
+  box-shadow: 0 0 1px rgba(0,0,0,.15);
+  padding-bottom: 35px;
+
+  & > * {
+    margin: 0 20px;
+    &:first-child {
+      border-bottom: 1px solid rgba(0,0,0,.1);
+    }
+  }
+  &-inner {
+    display: flex;
+    margin: 0 auto;
+    max-width: $width-max * 1.4;
+    padding: 0 15px;
+  }
+  &-inner-left, &-inner-right {
+    display: inline-block;
+    flex-grow: 1;
+  }
+  &-inner-left { align-self: flex-start; }
+  &-inner-right {
+    align-self: flex-end;
+    text-align: right;
+  }
+}
+$size-scrolldown: 34px;
+.scroll-down {
+  bottom: 10%;
+  color: rgba(255,255,255,0.7);
+  display: block;
+  font-size: $size-scrolldown;
+  height: $size-scrolldown;
+  left: calc(50% - #{$size-scrolldown/2});
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  width: $size-scrolldown;
+  z-index: 100;
+  &:hover { text-decoration: none; }
+}
+
+@media only screen and (max-width: 480px) {
+  .metabar-inner {
+    flex-direction: column;
+    justify-content: center;
+    & > [class^='metabar-inner-'] {
+      align-self: center;
+    }
+  }
+}
