@@ -1,7 +1,15 @@
 'use strict';
 
 var gulp = require('gulp'),
-	sass = require('gulp-sass');
+		sass = require('gulp-sass'),
+		fa = require('node-font-awesome'),
+		cssnano = require('gulp-cssnano');
+
+gulp.task('cssnano', function () {
+	return gulp.src('./assets/css/style.css')
+		.pipe(cssnano())
+		.pipe(gulp.dest('./assets/css/'));
+});
 
 gulp.task('sass', function () {
   return gulp.src('./src/_scss/**/*.scss')
@@ -17,6 +25,11 @@ gulp.task('sass', function () {
  
 gulp.task('sass:watch', function () {
   gulp.watch('./src/_scss/**/*.scss', ['sass']);
+});
+
+gulp.task('fonts', function() {
+	gulp.src(fa.fonts)
+		.pipe(gulp.dest('./assets/fonts'));
 });
 
 gulp.task('default', function() {
