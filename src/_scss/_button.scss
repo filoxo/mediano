@@ -1,0 +1,29 @@
+.button {
+	background: rgba(0,0,0,0);
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: 100em;
+	box-sizing: border-box;
+	color: rgba(0,0,0,.44);
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	height: 37px;
+	padding: 0 16px;
+	position: relative;
+	transition: .1s background-color,.1s border-color,.1s color,.1s fill;
+
+	&.large {
+		font-size: 15px;
+		height: 44px;
+		line-height: 42px;
+		padding: 0 18px;
+	}
+	&.outlined {
+		
+	}
+	&.filled {
+		background: $color-main;
+		border-color: $color-main;
+		color: $color-base;
+	}
+}
