@@ -1,0 +1,11 @@
+.tag {
+	background-color: $color-main;
+	border-radius: 100em;
+	color: $color-base;
+	font-size: 12px;
+	margin-right: 5px;
+	padding: 3px 10px;
+	a {
+		color: inherit;
+	}
+}
