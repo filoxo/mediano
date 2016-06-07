@@ -1,29 +1,30 @@
 /* Navigation */
 body.nav-opened .nav-cover {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 240px;
+  background-color: rgba(0,0,0,.25);
   bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 240px;
+  top: 0;
+  transition: background-color 0.5s ease .1s;
   z-index: 200;
 }
 
 .nav {
-  position: fixed;
-  top: 0;
-  right: 0;
+  background: $color-base;
   bottom: 0;
-  z-index: 5;
-  width: 240px;
-  opacity: 0;
-  background: #111;
+  box-shadow: -3px 0 5px rgba(0,0,0,.15);
   margin-bottom: 0;
-  text-align: left;
+  opacity: 0;
   overflow-y: auto;
-  -webkit-transition: -webkit-transform 0.5s ease,
-  opacity 0.3s ease 0.7s;
-  transition: transform 0.5s ease,
-  opacity 0.3s ease 0.7s;
+  position: fixed;
+  right: 0;
+  text-align: left;
+  top: 0;
+  -webkit-transition: -webkit-transform 0.5s ease, opacity 0.3s ease 0.7s;
+  transition: transform 0.5s ease, opacity 0.3s ease 0.7s;
+  width: 240px;
+  z-index: 5;
 }
 
 body.nav-closed .nav {
@@ -44,57 +45,21 @@ body.nav-opened .nav {
 }
 
 .nav-title {
-  position: absolute;
-  top: 45px;
-  left: 30px;
   font-size: 16px;
   font-weight: 100;
+	padding: 0 15px;
   text-transform: uppercase;
-  color: #fff;
 }
 
 .nav-close {
-  position: absolute;
-  top: 38px;
-  right: 25px;
-  width: 20px;
-  height: 20px;
-  padding: 0;
-  font-size: 10px;
-}
-
-.nav-close:focus {
-  outline: 0;
-}
-
-.nav-close:before,
-.nav-close:after {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 20px;
-  height: 1px;
-  background: rgb(150,150,150);
-  top: 15px;
-  -webkit-transition: background 0.15s ease;
-  transition: background 0.15s ease;
-}
-
-.nav-close:before {
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-.nav-close:after {
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
-
-.nav-close:hover:before,
-.nav-close:hover:after {
-  background: rgb(255,255,255);
+	background-color: transparent;
+	border: none;
+	color: $color-main;
+	font-size: 1.25em;
+	margin: 5px;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 .nav ul {
@@ -144,18 +109,6 @@ body.nav-opened .nav {
   height: 1px;
 }
 
-.nav a:link,
-.nav a:visited {
-  color: #B8B8B8;
-}
-
-.nav li.nav-current a,
-.nav a:hover,
-.nav a:active,
-.nav a:focus {
-  color: #fff;
-}
-
 .subscribe-button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -177,8 +130,8 @@ body.nav-opened .nav {
   border-radius: 3px;
   background: #fff;
   transition: all ease 0.3s;
-}
-.subscribe-button:before {
-  font-size: 9px;
-  margin-right: 6px;
+	&:before {
+		font-size: 9px;
+		margin-right: 6px;
+	}
 }
