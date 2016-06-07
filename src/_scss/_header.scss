@@ -1,7 +1,5 @@
-$header-meta-height: 115px;
-
 .main-header{
-  height: $header-meta-height * 3;
+	padding-bottom: 60px;
   position: relative;
   &.no-cover {
     background: $color-main; /* Old browsers */
@@ -14,29 +12,17 @@ $header-meta-height: 115px;
 .metabar {
   background: $color-base;
   box-shadow: 0 0 1px rgba(0,0,0,.15);
-  padding-bottom: 35px;
+  padding: 20px 10px 5px;
 
-  & > * {
-    margin: 0 20px;
-    &:first-child {
-      border-bottom: 1px solid rgba(0,0,0,.1);
-    }
-  }
-  &-inner {
-    display: flex;
-    margin: 0 auto;
-    max-width: $width-max * 1.4;
-    padding: 0 15px;
-  }
-  &-inner-left, &-inner-right {
-    display: inline-block;
-    flex-grow: 1;
-  }
-  &-inner-left { align-self: flex-start; }
-  &-inner-right {
-    align-self: flex-end;
-    text-align: right;
-  }
+	&-inner {
+		margin: 0 auto;
+		max-width: $width-max * 1.4;
+		position: relative;
+		&-top {
+			border-bottom: 1px solid rgba(0,0,0,.1);
+			padding-bottom: 20px;
+		}
+	}
 }
 $size-scrolldown: 34px;
 .scroll-down {
@@ -49,9 +35,6 @@ $size-scrolldown: 34px;
   position: absolute;
   text-align: center;
   text-decoration: none;
-  -webkit-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  transform: rotate(-90deg);
   width: $size-scrolldown;
   z-index: 100;
   &:hover { text-decoration: none; }
