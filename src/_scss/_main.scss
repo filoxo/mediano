@@ -12,8 +12,9 @@
 html, body {
   background: $color-body;
   font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: normal;
+  line-height: 1.75em;
   min-width: 320px;
 }
 a {
@@ -50,12 +51,26 @@ p {
   &normal {
     font-weight: normal;
   }
+	&text-accent {
+		color: $color-main;
+	}
 }
 
 /** Components **/
-.content {
-  padding: 20px;
+.page-title {
+	margin: 0;
 }
+
+.content {
+	margin: 0 auto;
+	max-width: $width-max;
+	padding: 20px;
+}
+
+.pagination {
+	text-align: center;
+}
+
 .site-footer {
 	&::before{
 		content: '';
@@ -68,26 +83,11 @@ p {
 	}
 }
 
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "casper-icons", "Open Sans", sans-serif;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  text-decoration: none !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-arrow-left:before {
-  content: "\f605";
-}
-
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 760px){
   .content {
-    padding: 10px;
+    padding: 10px 0;
   }
+}
+@media only screen and (max-width: 480px){
 }
 
