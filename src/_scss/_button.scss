@@ -27,3 +27,19 @@
 		color: $color-base;
 	}
 }
+
+.menu-button {
+	background-color: transparent;
+	border: none;
+	color: darken($color-main, 5);
+	position: absolute;
+	top: 0;
+	transition: color 250ms;
+	right: 0;
+	&:hover {
+		color: $color-main;
+	}
+	&:active {
+		color: lighten($color-main, 5);
+	}
+}
